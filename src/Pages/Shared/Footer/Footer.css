@@ -1,0 +1,23 @@
+.footer {
+  background-color: #ffffff;
+}
+
+.about-text {
+  text-align: justify;
+}
+
+.explore,
+.legal {
+  text-align: left;
+  color: black;
+}
+
+.nav {
+  text-decoration: none;
+  color: black;
+}
+
+.nav:hover {
+  text-decoration: none;
+  color: black;
+}
