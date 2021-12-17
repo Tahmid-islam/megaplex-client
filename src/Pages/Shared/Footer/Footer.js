@@ -11,14 +11,14 @@ const Footer = () => {
             <div className="col-md-7">
               <h1 className="px-3">About Us</h1>
               <p className="about-text px-3">
-                Megaplex is definitely the biggest online shopping mall in
-                Bangladesh and probably in South East Asia.A large number of
-                shops inside where you can buy almost each and everything. There
-                are a large number of restaurants also including children's
-                theme park, gymnasium, swimming pools and a number of movie
-                theaters. There is an amusement park outside the mall. It is a
-                place to spend a quality time. But one major drawback is that it
-                is hard to find the direction.
+                Megaplex is definitely the biggest online movie ticket booking
+                site in Bangladesh and probably in South East Asia.A large
+                number of shops inside where you can buy almost each and
+                everything. There are a large number of restaurants also
+                including children's theme park, gymnasium, swimming pools and a
+                number of movie theaters. There is an amusement park outside the
+                mall. It is a place to spend a quality time. But one major
+                drawback is that it is hard to find the direction.
               </p>
             </div>
             <div className="col-md-5 px-4">

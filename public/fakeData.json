@@ -1,0 +1,58 @@
+[
+  {
+    "movieName": "Spider Man No Way Home",
+    "img": "https://img.ticketnew.com/tn/movie/23999/7.jpg?7568995&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "3PM",
+    "price": 800,
+    "language": "English"
+  },
+  {
+    "movieName": "Pushpa",
+    "img": "https://img.ticketnew.com/tn/movie/24000/7.jpg?4472393&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "6.30PM",
+    "price": 500,
+    "language": "Hindi"
+  },
+  {
+    "movieName": "Sooryavanshi",
+    "img": "https://img.ticketnew.com/tn/movie/22341/7.jpg?6416241&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "9PM",
+    "price": 600,
+    "language": "Hindi"
+  },
+  {
+    "movieName": "Tadap",
+    "img": "https://img.ticketnew.com/tn/movie/23894/7.jpg?4382895&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "11AM",
+    "price": 300,
+    "language": "Hindi"
+  },
+  {
+    "movieName": "Antim",
+    "img": "https://img.ticketnew.com/tn/movie/23862/7.jpg?4157682&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "1PM",
+    "price": 600,
+    "language": "Hindi"
+  },
+  {
+    "movieName": "House Of Gucci",
+    "img": "https://img.ticketnew.com/tn/movie/23878/7.jpg?v63687047312303&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "3PM",
+    "price": 600,
+    "language": "English"
+  },
+  {
+    "movieName": "Sumesh And Ramesh",
+    "img": "https://img.ticketnew.com/tn/movie/23876/7.jpg?6708299&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "5PM",
+    "price": 400,
+    "language": "Malayam"
+  },
+  {
+    "movieName": "Chandigarh Kare Aashiqui",
+    "img": "https://img.ticketnew.com/tn/movie/23960/7.jpg?3906916&x-oss-process=image/resize,m_mfit,w_330,h_400/quality,q_80",
+    "showTime": "8PM",
+    "price": 500,
+    "language": "Hindi"
+  }
+]
