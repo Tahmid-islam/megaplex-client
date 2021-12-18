@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Footer from "../../Shared/Footer/Footer";
 import Header from "../../Shared/Navbar/Header";
 
-const Login = () => {
-  const { loginUser, isLoading, error, signInWithGoogle, setError } = useAuth();
+const Register = () => {
+  const { registerUser, isLoading, error, signInWithGoogle, setError } =
+    useAuth();
+
   const location = useLocation();
-  const navigate = useNavigate();
+  const Navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -17,24 +20,30 @@ const Login = () => {
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
-    loginUser(data.email, data.password, location, navigate);
+    registerUser(data.email, data.password, data.name, location, Navigate);
     reset();
   };
 
   const handleGoogleSignIn = () => {
-    signInWithGoogle(location, navigate);
+    signInWithGoogle(location, Navigate);
   };
 
   return (
     <div>
-      <Header></Header>
+      <Header />
       <div className="w-75 container mx-auto border my-4 shadow p-3 mx-3 px-3">
         <div className="text-center py-4">
           <h1>
-            Login <i className="fas fa-sign-in-alt"></i>
+            Register <i className="fas fa-sign-in-alt"></i>
           </h1>
         </div>
         <form onSubmit={handleSubmit(onSubmit)}>
+          <input
+            className="form-control my-3 p-2"
+            placeholder="Name"
+            {...register("name", { required: true })}
+          />
+          {error.name && <span>This field is required</span>}
           <input
             className="form-control my-3 p-2"
             placeholder="Email"
@@ -53,7 +62,7 @@ const Login = () => {
           <input
             className="form-control my-3 btn btn-dark p-2"
             type="submit"
-            value="Login"
+            value="Sign in"
           />
         </form>
         {isLoading && (
@@ -61,10 +70,12 @@ const Login = () => {
         )}
         <Link
           style={{ textDecoration: "none" }}
-          to="/register"
+          to="/login"
           onClick={() => setError("")}
         >
-          <p className="text-dark text-center fw-bold">New to Megaplex?</p>
+          <p className="text-dark text-center fw-bold">
+            Already have an account?
+          </p>
         </Link>
         <div className="text-center">
           <button
@@ -75,9 +86,9 @@ const Login = () => {
           </button>
         </div>
       </div>
-      <Footer></Footer>
+      <Footer />
     </div>
   );
 };
 
-export default Login;
+export default Register;

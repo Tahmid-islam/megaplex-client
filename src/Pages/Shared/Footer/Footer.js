@@ -38,7 +38,7 @@ const Footer = () => {
                   </NavLink>
                   <br />
                   <NavLink className="nav" to="/">
-                    Doctors
+                    Movies
                   </NavLink>
                 </div>
 
