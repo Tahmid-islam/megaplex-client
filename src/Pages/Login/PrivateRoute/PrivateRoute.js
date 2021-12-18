@@ -1,5 +1,5 @@
-import { CircularProgress } from "@mui/material";
 import React from "react";
+import { Spinner } from "react-bootstrap";
 import { Navigate } from "react-router";
 import { useLocation } from "react-router";
 import useAuth from "../../../hooks/useAuth";
@@ -9,7 +9,7 @@ const PrivateRoute = ({ children }) => {
   let location = useLocation();
 
   if (isLoading) {
-    return <CircularProgress />;
+    return <Spinner animation="grow" variant="dark" className="text-center" />;
   }
   if (user.email) {
     return children;
