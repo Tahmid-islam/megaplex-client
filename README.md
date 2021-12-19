@@ -9,6 +9,7 @@
 - Users can review movies from our website from here it will be shown on the home page.
 - Admin can add a new admin form dashboard.
 - Admin panel can add the new movies variation from this web app.
+- Admin can manage movies from this web app.
 - Admin can update the booking status to confirm a user from this web app.
 - Complete login and authentication system added.
 
