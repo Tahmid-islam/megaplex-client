@@ -20,7 +20,8 @@
 - React Router
 - React Reval
 - React Slick
-- Material UI
+- React Bootstrap
+- Bootstrap5
 - React Hook Form
 - Heroku
 - Firebase
