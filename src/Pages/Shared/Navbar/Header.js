@@ -16,8 +16,14 @@ const Header = () => {
         className="fw-bold"
       >
         <Container>
+          <Navbar.Brand as={NavLink} to="/">
+            <img
+              src="https://i.ibb.co/JBJBrcT/Valley-Fair-Store-List-Logos-Luxor-Fragrances.png"
+              alt=""
+            />
+          </Navbar.Brand>
           <Navbar.Brand as={NavLink} to="/" className="fw-bolder">
-            Megaplex
+            Megaplex Theater
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
