@@ -31,8 +31,8 @@ const MovieDetails = () => {
               <span className="fw-bold">Show Time:</span> {showTime}
             </p>
             <p>
-              <span className="fw-bold">Price: $</span>
-              {price}
+              <span className="fw-bold">Price: </span>
+              {price} TK
             </p>
             <p>
               <span className="fw-bold">Language:</span> {language}

@@ -1,11 +1,10 @@
 import React from "react";
 import { Form, Container, Button } from "react-bootstrap";
-
 import Fade from "react-reveal/Fade";
 
 const Contact = () => {
   return (
-    <Container className="">
+    <Container className="pt-3">
       <Fade bottom>
         <p className="fs-1 fw-bold">Contact Us</p>
         <Form

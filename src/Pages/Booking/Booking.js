@@ -15,7 +15,7 @@ const Booking = ({ movieData }) => {
       img,
       showTime,
       price,
-      totalPrice: price * data.quantity,
+      totalPrice: parseInt(price) * data.quantity,
       movie_name: movieName,
     };
     console.log(newData);
@@ -66,7 +66,7 @@ const Booking = ({ movieData }) => {
         />
         <input
           className="mt-3 form-control"
-          type="number"
+          type="date"
           {...register("date", { required: true })}
           placeholder="Enter The Date Of Current Month"
         />

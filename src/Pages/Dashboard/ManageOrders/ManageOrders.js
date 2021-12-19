@@ -4,9 +4,9 @@ import { useState } from "react";
 import Slide from "react-reveal/Slide";
 import useAuth from "../../../hooks/useAuth";
 
-const MyOrders = () => {
+const ManageOrders = () => {
   const { user } = useAuth();
-  const [bookings, setBookings] = useState([]);
+  const [allBookings, setAllBookings] = useState([]);
   let count = 1;
 
   useEffect(() => {
@@ -14,10 +14,30 @@ const MyOrders = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myBookings/${user?.email}`)
+    fetch(`http://localhost:5000/bookings`)
       .then((res) => res.json())
-      .then((data) => setBookings(data));
-  }, [user.email]);
+      .then((data) => setAllBookings(data));
+  }, [user.email, allBookings]);
+
+  const handleUpdateStatus = (id) => {
+    const proceed = window.confirm("Are you sure, you want to update status?");
+    if (proceed) {
+      const url = `http://localhost:5000/updateStatus/${id}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(allBookings),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.modifiedCount > 0) {
+            alert("Status Update Successful");
+          }
+        });
+    }
+  };
 
   //Delete
   const handleDeleteBooking = (id) => {
@@ -31,10 +51,10 @@ const MyOrders = () => {
         .then((data) => {
           if (data.deletedCount > 0) {
             alert("Deleted Successfully");
-            const remainingBookings = bookings.filter(
+            const remainingBookings = allBookings.filter(
               (booking) => booking._id !== id
             );
-            setBookings(remainingBookings);
+            setAllBookings(remainingBookings);
           }
         });
     }
@@ -52,25 +72,34 @@ const MyOrders = () => {
                 <th scope="col">Serial</th>
                 <th scope="col">Movie Name</th>
                 <th scope="col">Email</th>
-                <th scope="col">Show Time</th>
+                <th scope="col">Phone</th>
                 <th scope="col">Number of Tickets</th>
                 <th scope="col">Total Price</th>
                 <th scope="col">Booking Date</th>
                 <th scope="col">Status</th>
+                <th scope="col">Change Status</th>
                 <th scope="col">Delete</th>
               </tr>
             </thead>
             <tbody>
-              {bookings.map((booking) => (
-                <tr key={booking.carId} className="text-center">
+              {allBookings.map((booking) => (
+                <tr key={booking._id} className="text-center">
                   <td>{count++}</td>
                   <td>{booking.movie_name}</td>
                   <td>{booking.email}</td>
-                  <td>{booking.showTime}</td>
+                  <td>{booking.phone}</td>
                   <td>{booking.quantity}</td>
                   <td>{booking.totalPrice} TK</td>
                   <td>{booking.date}</td>
                   <td>{booking.status}</td>
+                  <td>
+                    <button
+                      className="btn btn-success btn-sm"
+                      onClick={() => handleUpdateStatus(booking._id)}
+                    >
+                      Confirmed
+                    </button>
+                  </td>
                   <td>
                     <button
                       className="btn-sm btn-danger rounded-3"
@@ -89,4 +118,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default ManageOrders;
