@@ -14,7 +14,7 @@ const ManageOrders = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookings`)
+    fetch(`https://lit-stream-42516.herokuapp.com/bookings`)
       .then((res) => res.json())
       .then((data) => setAllBookings(data));
   }, [user.email, allBookings]);
@@ -22,7 +22,7 @@ const ManageOrders = () => {
   const handleUpdateStatus = (id) => {
     const proceed = window.confirm("Are you sure, you want to update status?");
     if (proceed) {
-      const url = `http://localhost:5000/updateStatus/${id}`;
+      const url = `https://lit-stream-42516.herokuapp.com/updateStatus/${id}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -43,7 +43,7 @@ const ManageOrders = () => {
   const handleDeleteBooking = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/bookings/${id}`;
+      const url = `https://lit-stream-42516.herokuapp.com/bookings/${id}`;
       fetch(url, {
         method: "DELETE",
       })

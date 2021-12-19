@@ -19,7 +19,7 @@ const Booking = ({ movieData }) => {
       movie_name: movieName,
     };
     console.log(newData);
-    fetch("http://localhost:5000/bookings", {
+    fetch("https://lit-stream-42516.herokuapp.com/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

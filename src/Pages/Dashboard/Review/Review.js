@@ -14,7 +14,7 @@ const Review = () => {
       name: user.displayName,
     };
 
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://lit-stream-42516.herokuapp.com/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json",

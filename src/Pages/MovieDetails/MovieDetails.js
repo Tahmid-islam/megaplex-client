@@ -10,7 +10,7 @@ const MovieDetails = () => {
   const [movieData, setMovieData] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/movies/${movieId}`)
+    fetch(`https://lit-stream-42516.herokuapp.com/movies/${movieId}`)
       .then((res) => res.json())
       .then((data) => setMovieData(data));
   }, [movieId]);

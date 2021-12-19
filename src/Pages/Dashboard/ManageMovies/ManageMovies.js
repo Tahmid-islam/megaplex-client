@@ -6,7 +6,7 @@ const ManageProducts = () => {
   let count = 1;
 
   React.useEffect(() => {
-    fetch(`http://localhost:5000/movies`)
+    fetch(`https://lit-stream-42516.herokuapp.com/movies`)
       .then((res) => res.json())
       .then((data) => setMovies(data.movies));
   }, [movies]);
@@ -15,7 +15,7 @@ const ManageProducts = () => {
   const handleDeleteMovies = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/movies/${id}`;
+      const url = `https://lit-stream-42516.herokuapp.com/movies/${id}`;
       fetch(url, {
         method: "DELETE",
       })

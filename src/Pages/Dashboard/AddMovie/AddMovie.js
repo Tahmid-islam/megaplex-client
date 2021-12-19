@@ -13,7 +13,7 @@ const AddMovie = ({ movieData }) => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/movies", {
+    fetch("https://lit-stream-42516.herokuapp.com/movies", {
       method: "POST",
       headers: {
         "content-type": "application/json",

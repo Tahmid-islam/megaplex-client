@@ -12,7 +12,7 @@ const AllMovies = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5000/movies")
+    fetch("https://lit-stream-42516.herokuapp.com/movies")
       .then((res) => res.json())
       .then((data) => setMovies(data.movies));
   }, []);

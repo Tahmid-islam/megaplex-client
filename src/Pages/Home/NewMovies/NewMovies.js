@@ -7,7 +7,7 @@ const NewMovies = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/movies?size=4`)
+    fetch(`https://lit-stream-42516.herokuapp.com/movies?size=4`)
       .then((res) => res.json())
       .then((data) => {
         setMovies(data.movies);

@@ -14,7 +14,7 @@ const MyOrders = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myBookings/${user?.email}`)
+    fetch(`https://lit-stream-42516.herokuapp.com/myBookings/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setBookings(data));
   }, [user.email]);
@@ -23,7 +23,7 @@ const MyOrders = () => {
   const handleDeleteBooking = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `http://localhost:5000/bookings/${id}`;
+      const url = `https://lit-stream-42516.herokuapp.com/bookings/${id}`;
       fetch(url, {
         method: "DELETE",
       })
